@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.service.goreel.tech/simple"
+verify_ssl = true
+name = "pip_conf_index_global"
+
+[packages]
+requests = "*"
+beautifulsoup4 = "*"
+aioslsk = "*"
+python-dotenv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.10"
