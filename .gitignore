@@ -1,0 +1,11 @@
+# system files
+.DS_Store
+
+# ide files
+.idea
+
+# python files
+*.pyc
+__pycache__
+venv
+.env
