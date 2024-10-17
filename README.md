@@ -48,7 +48,6 @@
 
 ## Usage
 
-1. Add your music tracks data to `source/tracks.csv` in the appropriate format.
 2. Run the main script to parse the track names:
    ```bash
    python main.py
