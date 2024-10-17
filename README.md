@@ -20,7 +20,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/SamIvanov7/init-music-parser.git
    cd init-music-parser
    ```
 
