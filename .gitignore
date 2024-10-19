@@ -9,4 +9,6 @@
 __pycache__
 venv
 .env
-./source/tracks.csv
+*.mp3
+*.csv
+.tree.txt

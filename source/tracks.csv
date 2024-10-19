@@ -1,16 +1,51 @@
-01,Tiger Stripes,I Heard It Through The Bassline,Rekids,6:58 , 125 BPM
-02,Clive From Accounts,Clive By Night,Dirt Crew Recordings,5:48 , 124 BPM
-03,Kerri Chandler,Caged Bird (Atjazz instrumental remix),Kaoz Theory,9:00 , 124 BPM
-04,Adam Port,Move,Keinemusik,5:52 , 120 BPM
-05,In Flagranti,Eye Catching Window Display,Codek,6:51 , 126 BPM
-06,"Megatronic, Kiko Navarro & Stavros",The World (Kiko Navarro remix),Razor-N-Tape,7:30 , 120 BPM
-07,Sound Support,Everybody,Toy Tonics,5:57 , 125 BPM
-08,The Blessed Madonna,Brand New,Warner,5:08 , 118 BPM
-09,Clive From Accounts,That Rhythm,Dirt Crew Recordings,4:42 , 125 BPM
-10,Leyo,Open Up The Drunk Do It (original mix),Cecille,5:02 , 128 BPM
-11,Jamie Xx & Honey Dijon,Baddy On The Floor,Young,3:42 , 124 BPM
-12,Steve Bug,Crew Thing,Nu Groove,6:15 , 125 BPM
-13,Dino Lenny,Lose Control (Tea with Quincy mix),R&S,9:16 , 126 BPM
-14,RAMI & JT Donaldson,WALK (JT Donaldson remix),Dolfin,4:56 , 124 BPM
-15,Oliver Dollar,Funked Up,Rekids,6:27 , 124 BPM
-16,Megatronic & Stavros,The World,Razor-N-Tape,4:03 , 120 BPM
+track_id,rating_in_top_50,artist,track,label,duration,bpm
+39262114,01,Tiger Stripes,I Heard It Through The Bassline,Rekids,6:58 , 125 BPM
+23357668,02,Clive From Accounts,Clive By Night,Dirt Crew Recordings,5:48 , 124 BPM
+67289862,03,Sound Support,Strung Out (extended version),Toy Tonics,5:25 , 126 BPM
+70333629,04,Kerri Chandler,Caged Bird (Atjazz instrumental remix),Kaoz Theory,9:00 , 124 BPM
+60002092,05,Clive From Accounts,That Rhythm,Dirt Crew Recordings,4:42 , 125 BPM
+28897348,06,"Megatronic, Kiko Navarro & Stavros",The World (Kiko Navarro remix),Razor-N-Tape,7:30 , 120 BPM
+19954557,07,Steve Bug,Crew Thing,Nu Groove,6:15 , 125 BPM
+13269567,08,Sound Support,Everybody,Toy Tonics,5:57 , 125 BPM
+25030169,09,Kerri Chandler,Caged Bird (Atjazz remix),Kaoz Theory,9:00 , 124 BPM
+55203536,10,DJ Dove,Illusions (DJ Steaw extended interpretation),4 To The Floor,6:13 , 124 BPM
+80803593,11,Jamie Xx & Honey Dijon,Baddy On The Floor,Young,3:42 , 124 BPM
+68882707,12,Adam Port,Move,Keinemusik,5:52 , 120 BPM
+46699236,13,Megatronic & Stavros,The World,Razor-N-Tape,4:03 , 120 BPM
+30852917,14,Sound Support,Nobody Knows (extended version),Toy Tonics,5:12 , 125 BPM
+40843996,15,Dino Lenny,Lose Control (Tea with Quincy mix),R&S,9:16 , 126 BPM
+22723918,16,Sunner Soul,Just Right Side,Vintage Music,5:31 , 123 BPM
+93135333,17,DJ Sneak,Chicago House Music,Frappe,6:18 , 127 BPM
+55800137,18,Clive From Accounts,Maceo,Dirt Crew Recordings,4:36 , 126 BPM
+75321809,19,Abel,Hand Made (Rocco Rodamaal Raw mix),Atjazz Record Company,5:58 , 122 BPM
+76423477,20,Toman,De Bongo Man,Cecille,6:30 , 128 BPM
+42499953,21,Demi Riquisimo,Certified,Semi Delicious,6:45 , 124 BPM
+28138727,22,Phonk D,Cheek (Soundstream remix),Footjob,6:47 , 120 BPM
+97439383,23,In Flagranti,Eye Catching Window Display,Codek,6:51 , 126 BPM
+92187754,24,Mr. Tony Technics,Summer In Chicago,Hi! Reaction,6:03 , 127 BPM
+20169677,25,Danny Tenaglia,Tonight,Nervous US,6:19 , 122 BPM
+39140539,26,Chewy Rubs,Focus (Chewy Rubs Reefa Vox Bump),Bandolier,7:48 , 120 BPM
+65118509,27,DJ City,Cities In Dust,Public Possession,4:56 , 127 BPM
+45338339,28,Leyo,Open Up The Drunk Do It (original mix),Cecille,5:02 , 128 BPM
+71250901,29,Jamie Xx & The Avalanches,All You Children,Young,4:14 , 120 BPM
+98714071,30,Genius Of Time,Endless,Aniara Recordings,6:17 , 128 BPM
+27590138,31,Christopher Rau,On The Dancefloor,Smallville Germany,6:07 , 129 BPM
+27373769,32,Kolter,Be Real,Koltercamp,7:33 , 125 BPM
+80609836,33,Ricky Montanari,A Closing Track (extended mix),Groove Culture Deep,7:15 , 125 BPM
+97438654,34,Scruscru,Twilight Voyage (original mix),Blur,5:55 , 123 BPM
+57592916,35,Tom Churchill,Known Unknowns (edit),Innate,6:26 , 120 BPM
+26804643,36,Lebedev (RU) & Manora,Set Me Free,Rhythm Section,6:33 , 122 BPM
+63461018,37,Patman,The Future (V's Further Into edit),Vehicle,6:28 , 120 BPM
+22746722,38,Megatronic,Been Thinkin,Razor-N-Tape,4:27 , 124 BPM
+53772714,39,Oliver Dollar,Funked Up,Rekids,6:27 , 124 BPM
+43568176,40,Sound Support,Higher (extended mix),Toy Tonics,4:53 , 122 BPM
+52918575,41,Sound Support,That Song (extended version),Toy Tonics,6:19 , 130 BPM
+65180419,42,Sister Bliss,"Can't Get A Man, Can't Get A Job (Life's A Bitch - mix One)",Hooj Choons,5:52 , 130 BPM
+67206736,43,Danny Howells,Mama Loves You (original mix),Bedrock,8:40 , 123 BPM
+48269963,44,Girls Of The Internet,Sleeping Sound (feat I Am An Island),Classic,5:30 , 120 BPM
+40198057,45,Benjamin Frohlich,Raging Spirits (Whitesquare remix),Permanent Vacation,5:45 , 128 BPM
+84224200,46,Philippa,Dreaming,Freerange,5:42 , 124 BPM
+54663016,47,Philippa,Say What,Freerange,5:53 , 125 BPM
+74912868,48,Holy Moly,Mi Vendo (original mix),SHANGO,5:08 , 107 BPM
+35245280,49,Frits Wentink,Spiritual Basslines (club mix),Clone Royal Oak,6:06 , 121 BPM
+20271512,50,Dave DK,Herzen Auf,Pampa Germany,8:08 , 120 BPM

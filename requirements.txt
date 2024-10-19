@@ -29,3 +29,11 @@ typing-extensions==4.12.2; python_version >= '3.8'
 urllib3==2.2.3; python_version >= '3.8'
 voluptuous==0.15.2; python_version >= '3.9'
 yarl==1.15.4; python_version >= '3.9'
+Pyrogram
+TgCrypto
+youtube_dl
+youtube_search_python
+youtube_search
+requests
+ffmpeg-python
+ffmpeg

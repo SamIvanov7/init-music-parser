@@ -2,6 +2,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import csv
+import random
 import logging
 from dotenv import load_dotenv
 
@@ -41,13 +42,15 @@ class TrackNamesParser:
             return []
 
         logging.debug(f"Found {len(tracks)} tracks on the page")
-        self.tracks = tracks[:16]
+        self.tracks = tracks[:100]
         logging.debug(f"Processing {len(self.tracks)} tracks")
 
     def extract_track_info(self):
         extracted_tracks = []
 
         for index, track in enumerate(self.tracks, start=1):
+
+            track_id = random.randint(10000000, 99999999)
             artist = track.select_one('.juno-artist a')
             artist = artist.get_text(strip=True) if artist else ''
             if not artist:
@@ -71,11 +74,23 @@ class TrackNamesParser:
                 duration, bpm = '', ''
                 logging.warning(f"Duration or BPM not found for track {index}")
 
-            extracted_tracks.append([f"{index:02}", artist, title, label, duration, bpm])
+            extracted_tracks.append([track_id, f"{index:02}", artist, title, label, duration, bpm])
 
         return extracted_tracks
 
+    def read_existing_tracks(self):
+        """Read existing tracks from the CSV and return a set of track titles."""
+        existing_titles = set()
+
+        if os.path.isfile(self.csv_file):
+            with open(self.csv_file, mode='r', encoding='utf-8') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    existing_titles.add(row['track'])  # Assume "track" is the column name for track titles
+        return existing_titles
+
     def save_to_csv(self, data):
+        existing_titles = self.read_existing_tracks()  # Get existing titles
         file_exists = os.path.isfile(self.csv_file)
         mode = 'a' if file_exists else 'w'
 
@@ -84,10 +99,12 @@ class TrackNamesParser:
 
             if not file_exists:
                 logging.debug("Writing headers to the CSV file")
-                writer.writerow(["Index", "Artist", "Track", "Label", "Duration", "BPM"])
+                writer.writerow(["track_id", "rating_in_top_50", "artist", "track", "label", "duration", "bpm"])
 
             for track in data:
-                logging.debug(f"Writing track {track[0]} to the CSV file")
-                writer.writerow(track)
+                if track[3] not in existing_titles:  # Check if track title already exists
+                    logging.debug(f"Writing track {track[0]} to the CSV file")
+                    writer.writerow(track)
+                    existing_titles.add(track[3])  # Add new track to the set to avoid duplicates
 
         logging.info(f"Data saved in {self.csv_file}")
