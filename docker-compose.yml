@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   init-music-parser:
     build:
@@ -6,5 +8,13 @@ services:
     env_file:
       - .env
     restart: unless-stopped
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    healthcheck:
+      test: ["CMD", "ffmpeg", "-version"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
     volumes:
       - ./data:/app/data

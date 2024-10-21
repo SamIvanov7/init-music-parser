@@ -26,8 +26,8 @@ RUN pip install -r requirements.txt
 
 # Optionally, remove build dependencies to reduce image size
 # Uncomment the following lines if you want to remove build tools after installation
-RUN apt-get purge -y --auto-remove gcc build-essential libffi-dev libssl-dev \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get purge -y --auto-remove gcc build-essential libffi-dev libssl-dev \
+#     && rm -rf /var/lib/apt/lists/*
 
 # Copy the entire project to the working directory
 COPY . /app/
