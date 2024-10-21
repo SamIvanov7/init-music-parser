@@ -1,14 +1,15 @@
 # core/bot.py
 from pyrogram import Client, filters
 import logging
-import yt_dlp
+from typing import Optional
+import yt_dlp  # type: ignore
 import os
 
 # Initialize logger for this module
 logger = logging.getLogger(__name__)
 
 class Bot:
-    def __init__(self, bot_token: str, api_id: int, api_hash: str, plugins: dict = None):
+    def __init__(self, bot_token: str, api_id: int, api_hash: str, plugins: Optional[dict] = None):
         """
         Initialize the Bot with Pyrogram Client and register handlers.
 
@@ -23,7 +24,7 @@ class Bot:
             bot_token=bot_token,
             api_hash=api_hash,
             api_id=api_id,
-            plugins=plugins
+            plugins=plugins or {}
         )
         self.add_handlers()
 

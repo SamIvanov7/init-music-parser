@@ -58,18 +58,20 @@ async def song_search(client, message):
 
     # yt-dlp options for downloading as MP3
     ydl_opts = {
-        "format": "bestaudio/best",
-        "postprocessors": [{
-            "key": "FFmpegExtractAudio",
-            "preferredcodec": "mp3",
-            "preferredquality": "320",  # Set bitrate for the MP3
-        }],
-        "outtmpl": "%(title)s.%(ext)s",  # Output file template
-        "postprocessor_args": [
-            "-metadata", "title=%(title)s",
-            "-metadata", "artist=MusicDownloadv2bot"
-        ],  # Add metadata to MP3
-        "keepvideo": False  # Do not keep the WebM or M4A after conversion
+    "format": "bestaudio/best",
+    "postprocessors": [{
+        "key": "FFmpegExtractAudio",
+        "preferredcodec": "mp3",
+        "preferredquality": "320",  # Set bitrate for the MP3
+    }],
+    "outtmpl": "%(title)s.%(ext)s",
+    "postprocessor_args": [
+        "-metadata", "title=%(title)s",
+        "-metadata", "artist=InitMusicParserBot"
+    ],
+    "keepvideo": False,
+    "username": os.environ.get("USERNAME"),  # Add YouTube account credentials
+    "password": os.environ.get("PASSWORD"),
     }
 
     try:
@@ -105,13 +107,18 @@ async def song_search(client, message):
     await m.edit("`Uploading track...`")
 
     try:
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:  # using yt-dlp for MP3 conversion
-            info_dict = ydl.extract_info(link, download=True)  # Download the video/audio
-            audio_file = ydl.prepare_filename(info_dict).replace(info_dict['ext'], 'mp3')  # Get the correct MP3 filename
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info_dict = ydl.extract_info(link, download=True)
+            audio_file = ydl.prepare_filename(info_dict).replace(info_dict['ext'], 'mp3')
+
+        if not audio_file:
+            await m.edit('Failed to download the audio file.')
+            return
 
         rep = (f'🎧 Title : [{title[:35]}]({link})\n⏳ Duration : `{duration}`\n👀 Views : `{views}`\n\n'
-               f'📮 By: {message.from_user.mention()}')
+            f'📮 By: {message.from_user.mention()}')
 
+        # Calculate duration in seconds
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -124,6 +131,12 @@ async def song_search(client, message):
     except Exception as e:
         await m.edit('Failed\n\n`Try again...`')
         print(e)
+    finally:
+        # Clean up files
+        if 'audio_file' in locals() and os.path.exists(audio_file):
+            os.remove(audio_file)
+        if os.path.exists(thumb_name):
+            os.remove(thumb_name)
 
     try:
         # Clean up files

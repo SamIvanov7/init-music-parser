@@ -93,3 +93,8 @@ cookies.txt
 venv/
 ENV/
 env/
+*.mp3
+*.csv
+*.session
+/tree.txt
+.DS_Store
