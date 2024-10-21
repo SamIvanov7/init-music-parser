@@ -7,7 +7,8 @@ from pyrogram import filters, Client, idle
 from youtube_search import YoutubeSearch  # type: ignore
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-
+username = os.environ.get("USERNAME")
+password = os.environ.get("PASSWORD")
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
@@ -70,8 +71,8 @@ async def song_search(client, message):
         "-metadata", "artist=InitMusicParserBot"
     ],
     "keepvideo": False,
-    "username": os.environ.get("USERNAME"),  # Add YouTube account credentials
-    "password": os.environ.get("PASSWORD"),
+    "username": username,  # Add YouTube account credentials
+    "password": password,
     }
 
     try:
