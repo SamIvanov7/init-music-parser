@@ -1,7 +1,7 @@
 # Use the official Python base image with Debian Bullseye
 FROM python:3.11-slim-bullseye
 
-# Set environment variables to prevent Python from writing .pyc files and to ensure output is flushed
+# Prevent Python from writing .pyc files and ensure stdout/stderr are unbuffered
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
