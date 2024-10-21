@@ -45,6 +45,7 @@ stubs = "*"
 yt-dlp = "*"
 pandas = "*"
 telegram = "*"
+flask = "*"
 
 [dev-packages]
 

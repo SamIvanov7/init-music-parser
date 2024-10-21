@@ -13,11 +13,20 @@ class Parser:
 
     def run_parser(self):
         parser = TrackNamesParser(self.url, self.csv_file)
-        html_content = parser.fetch_webpage()
-        if html_content:
-            parser.parse_tracks(html_content)
-            track_data = parser.extract_track_info()
-            parser.save_to_csv(track_data)
+        try:
+            html_content = parser.fetch_webpage()
+            if html_content:
+                parser.parse_tracks(html_content)
+                track_data = parser.extract_track_info()
+                parser.save_to_csv(track_data)
+
+        except:
+            print("Error: No HTML content received.")
+
+        finally:
+            pass
+
+
 
     def create_playlists(self):
         input_file = self.csv_file

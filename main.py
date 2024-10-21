@@ -17,28 +17,28 @@ if __name__ == '__main__':
     API_HASH = os.environ.get("API_HASH", "YOUR_API_HASH")
     CHANNEL_ID = "-1001549434173"
 
-    track_queue = Queue() # type: ignore
+    # track_queue = Queue() # type: ignore
 
-    parser = Parser()
-    downloader = Downloader(track_queue)
-    uploader = Uploader(track_queue, CHANNEL_ID)
+    # parser = Parser()
+    # downloader = Downloader(track_queue)
+    # uploader = Uploader(track_queue, CHANNEL_ID)
 
     plugins = dict(
         root="core/InitMusicParserBot/plugins"
     )
     bot = Bot(BOT_TOKEN, API_ID, API_HASH, plugins)
 
-    parser_thread = threading.Thread(target=parser.run)
-    parser_thread.start()
-    parser_thread.join()
-    downloader_thread = threading.Thread(target=downloader.run)
-    downloader_thread.start()
+    # parser_thread = threading.Thread(target=parser.run)
+    # parser_thread.start()
+    # parser_thread.join()
+    # downloader_thread = threading.Thread(target=downloader.run)
+    # downloader_thread.start()
 
     bot.start()
 
-    uploader.run(bot.bot)
+    # uploader.run(bot.bot)
 
     print("Bot is running...")
     bot.idle()
 
-    downloader_thread.join()
+    # downloader_thread.join()

@@ -1,51 +1,80 @@
 track_id,rating_in_top_50,artist,track,label,duration,bpm
-39262114,01,Tiger Stripes,I Heard It Through The Bassline,Rekids,6:58 , 125 BPM
-23357668,02,Clive From Accounts,Clive By Night,Dirt Crew Recordings,5:48 , 124 BPM
-67289862,03,Sound Support,Strung Out (extended version),Toy Tonics,5:25 , 126 BPM
-70333629,04,Kerri Chandler,Caged Bird (Atjazz instrumental remix),Kaoz Theory,9:00 , 124 BPM
-60002092,05,Clive From Accounts,That Rhythm,Dirt Crew Recordings,4:42 , 125 BPM
-28897348,06,"Megatronic, Kiko Navarro & Stavros",The World (Kiko Navarro remix),Razor-N-Tape,7:30 , 120 BPM
-19954557,07,Steve Bug,Crew Thing,Nu Groove,6:15 , 125 BPM
-13269567,08,Sound Support,Everybody,Toy Tonics,5:57 , 125 BPM
-25030169,09,Kerri Chandler,Caged Bird (Atjazz remix),Kaoz Theory,9:00 , 124 BPM
-55203536,10,DJ Dove,Illusions (DJ Steaw extended interpretation),4 To The Floor,6:13 , 124 BPM
-80803593,11,Jamie Xx & Honey Dijon,Baddy On The Floor,Young,3:42 , 124 BPM
-68882707,12,Adam Port,Move,Keinemusik,5:52 , 120 BPM
-46699236,13,Megatronic & Stavros,The World,Razor-N-Tape,4:03 , 120 BPM
-30852917,14,Sound Support,Nobody Knows (extended version),Toy Tonics,5:12 , 125 BPM
-40843996,15,Dino Lenny,Lose Control (Tea with Quincy mix),R&S,9:16 , 126 BPM
-22723918,16,Sunner Soul,Just Right Side,Vintage Music,5:31 , 123 BPM
-93135333,17,DJ Sneak,Chicago House Music,Frappe,6:18 , 127 BPM
-55800137,18,Clive From Accounts,Maceo,Dirt Crew Recordings,4:36 , 126 BPM
-75321809,19,Abel,Hand Made (Rocco Rodamaal Raw mix),Atjazz Record Company,5:58 , 122 BPM
-76423477,20,Toman,De Bongo Man,Cecille,6:30 , 128 BPM
-42499953,21,Demi Riquisimo,Certified,Semi Delicious,6:45 , 124 BPM
-28138727,22,Phonk D,Cheek (Soundstream remix),Footjob,6:47 , 120 BPM
-97439383,23,In Flagranti,Eye Catching Window Display,Codek,6:51 , 126 BPM
-92187754,24,Mr. Tony Technics,Summer In Chicago,Hi! Reaction,6:03 , 127 BPM
-20169677,25,Danny Tenaglia,Tonight,Nervous US,6:19 , 122 BPM
-39140539,26,Chewy Rubs,Focus (Chewy Rubs Reefa Vox Bump),Bandolier,7:48 , 120 BPM
-65118509,27,DJ City,Cities In Dust,Public Possession,4:56 , 127 BPM
-45338339,28,Leyo,Open Up The Drunk Do It (original mix),Cecille,5:02 , 128 BPM
-71250901,29,Jamie Xx & The Avalanches,All You Children,Young,4:14 , 120 BPM
-98714071,30,Genius Of Time,Endless,Aniara Recordings,6:17 , 128 BPM
-27590138,31,Christopher Rau,On The Dancefloor,Smallville Germany,6:07 , 129 BPM
-27373769,32,Kolter,Be Real,Koltercamp,7:33 , 125 BPM
-80609836,33,Ricky Montanari,A Closing Track (extended mix),Groove Culture Deep,7:15 , 125 BPM
-97438654,34,Scruscru,Twilight Voyage (original mix),Blur,5:55 , 123 BPM
-57592916,35,Tom Churchill,Known Unknowns (edit),Innate,6:26 , 120 BPM
-26804643,36,Lebedev (RU) & Manora,Set Me Free,Rhythm Section,6:33 , 122 BPM
-63461018,37,Patman,The Future (V's Further Into edit),Vehicle,6:28 , 120 BPM
-22746722,38,Megatronic,Been Thinkin,Razor-N-Tape,4:27 , 124 BPM
-53772714,39,Oliver Dollar,Funked Up,Rekids,6:27 , 124 BPM
-43568176,40,Sound Support,Higher (extended mix),Toy Tonics,4:53 , 122 BPM
-52918575,41,Sound Support,That Song (extended version),Toy Tonics,6:19 , 130 BPM
-65180419,42,Sister Bliss,"Can't Get A Man, Can't Get A Job (Life's A Bitch - mix One)",Hooj Choons,5:52 , 130 BPM
-67206736,43,Danny Howells,Mama Loves You (original mix),Bedrock,8:40 , 123 BPM
-48269963,44,Girls Of The Internet,Sleeping Sound (feat I Am An Island),Classic,5:30 , 120 BPM
-40198057,45,Benjamin Frohlich,Raging Spirits (Whitesquare remix),Permanent Vacation,5:45 , 128 BPM
-84224200,46,Philippa,Dreaming,Freerange,5:42 , 124 BPM
-54663016,47,Philippa,Say What,Freerange,5:53 , 125 BPM
-74912868,48,Holy Moly,Mi Vendo (original mix),SHANGO,5:08 , 107 BPM
-35245280,49,Frits Wentink,Spiritual Basslines (club mix),Clone Royal Oak,6:06 , 121 BPM
-20271512,50,Dave DK,Herzen Auf,Pampa Germany,8:08 , 120 BPM
+1,35,Agoria,Les violons ivres,,01:15,128
+2,22,BAYAAT,648 AM (AVEM Remix),,01:10,135
+3,40,Remcord,The Sub Changed My Life,,00:57,120
+4,15,Matthias Meyer,Becuz,,00:56,110
+5,28,Endor,Sway,,05:26,128
+6,19,Pryda,Animal,,05:26,125
+7,33,Paul Keeley,A Sort of Homecoming (M...),,05:26,130
+8,45,The Verve,Love Is Noise (Tong & Rog...),,05:25,140
+9,12,Chromeo,Needy Girl 2008 (Lifelike E...),,05:23,118
+10,27,Emmon,Machines,,05:21,126
+11,8,Stereo Monkey,Your Mind,,05:12,115
+12,21,DJ K-SEXY,This Is My House,,05:12,122
+13,17,Steve Redhead,Sad Homecoming (2017 R...),,05:12,117
+14,30,Cut'nPaste,Synthfly,,05:09,130
+15,23,Laurent Garnier,Crispy Bacon,,05:07,125
+16,14,The Shaker,Mooncat,,05:07,119
+17,9,Stephen Brown,Sandtext,,05:05,112
+18,11,System Overdrive,Minilab,,05:05,120
+19,25,Sunlight Project,Love Takes Over,,05:05,128
+20,18,Aero Manyelo,Kesi De,,05:05,123
+21,37,Nitzer Ebb,Control I'm Here,,05:04,135
+22,34,Atlantis Ocean,Life Frequency,,05:04,132
+23,26,Novar,Sphinx,,05:04,124
+24,20,Glenn Morrison,Hydrology,,05:03,121
+25,16,Zack Roth,Bass Cake,,05:03,116
+26,10,Volksmusik,Secret Girl (Paul Nazca Re...),,05:03,130
+27,29,Tal Fussman,Pace,,05:02,140
+28,13,Lauren Flax,Acid Jacker (Truncate Re...),,04:35,128
+29,7,Lauren Flax,Squelch-A-Pella (DJ Tool...),,04:34,125
+30,31,DJ Hell,My House (Tal Fussman R...),,04:29,118
+31,24,Klubi,The Bridge,,04:26,122
+32,36,Cybordelics,Adventures of Dama (feat....),,04:49,115
+33,5,Recondite,Karat,,04:47,130
+34,4,Disco Gurls,Cry 2 Me (Extended Mix),,04:42,135
+35,6,Phuture,Your Only Friend (Hardspa...),,04:39,140
+36,39,Israel Toledo,Departing V.1 (Angel Alani...),,04:38,128
+37,32,Andrew Fontana,Bear,,04:51,120
+38,3,Digital Department,Disconnection,,04:50,118
+39,38,Project M.C.,Bromley Ave (Edit),,04:49,123
+40,41,Skatman,Transmission,,04:25,130
+41,44,Psychemagik,Everywhere (Summer Of L...),,04:24,125
+42,2,Dannii Minogue,Baby Love (Silky 70's 12"),,04:16,115
+43,1,Tal Fussman,Even Rome Wasn't Built In ...,04:15,110
+44,12,Denis Horvat,Poudrextase,,04:12,120
+45,19,Davide Mazzilli,Disco (Club Mix),,04:03,128
+46,17,Alvaro Albarran,Tubah - Single,,04:02,122
+47,28,DJ Juliano BGM,Escape from Reality,,03:52,130
+48,50,Unknown,Bionic Soul,,03:00,140
+49,27,Radical G,Erase Your Mind (Raul Par...),,03:49,119
+50,22,Blake Jarrell & Jeff Varisco,Almonaster (Bass Stem),,03:40,125
+51,8,Modern Rocketry,Deeper N Deeper (Ultimix),,03:39,130
+52,16,Fancy,Slice Me Nice,,03:33,115
+53,14,DFX,Relax your Body (The Hac...),,03:26,118
+54,9,2hz,Modest (Remastered),,03:19,122
+55,35,Tal Fussman,Freedom Defines House,,03:11,128
+56,21,Florian Meindl,Lost Acid Tape 4,,02:59,120
+57,18,HNDRK,Time Shifting,,02:58,130
+58,5,Riva Starr,Feel It,,02:45,115
+59,7,Olmedo,Asteria,,02:31,125
+60,12,Aqua,Barbie Girl (Andrey Vertug...),,03:02,130
+61,10,Leon the Lover,Danseur de Réve (Extended...),,03:02,118
+62,24,The Banger Bros,Bang Da Bang (P.A.F.F. vs...),,03:01,120
+63,13,Klaus Hill,Slammer (Ben Morris & Ti...),,03:01,115
+64,19,Fixeer,La Mujer Dormida,,03:10,125
+65,22,Skatman,V.A.M.P,,03:08,128
+66,11,Max Freegrant & Yuji Ono,Kiev Drift (Radio Edit),,03:03,130
+67,17,Hever Jara & Regaal,Alone,,03:03,120
+68,26,Pretty Pink,Gazer (Extended Mix),,03:02,125
+69,30,Alen Skanner,Launch Sequence,,02:26,123
+70,34,Lesha Golod,Ultima,,02:25,130
+71,15,Claudio Coccia & Dorian Gray,Alternate (Dorian Gray Re...),,02:25,118
+72,20,Barnt,Aqua Breeze,,02:20,120
+73,8,Delorean,JX101,,02:20,115
+74,16,Sinisterman (aka Tom Laws),Mudstep (Original Mix),,02:18,125
+75,21,Dj T-boy,Kwaze Kwamnandi,,02:17,128
+76,14,WhoMadeWho,Silence & Secrets (Adriati...),,02:16,122
+77,13,8-Bit Arcade,Fendi belt (8-Bit Shiva & P...),,02:16,118
+78,23,Oxia,Unity (Up Mix),,02:15,130
+79,10,Cameron Jack,The Vision,,02:15,125
