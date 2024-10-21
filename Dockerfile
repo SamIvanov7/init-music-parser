@@ -1,5 +1,5 @@
-# Use the official Python base image
-FROM python:3.11-slim
+# Use the official Python base image with Debian Bullseye
+FROM python:3.11-slim-bullseye
 
 # Set environment variables to prevent Python from writing .pyc files and to ensure output is flushed
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -29,6 +29,8 @@ RUN pip install -r requirements.txt
 # RUN apt-get purge -y --auto-remove gcc build-essential libffi-dev libssl-dev \
 #     && rm -rf /var/lib/apt/lists/*
 
+# Copy the entire project to the working directory
 COPY . /app/
 
+# Define the default command to run your application
 CMD ["python", "main.py"]
