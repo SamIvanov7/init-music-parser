@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Install build dependencies and ffmpeg
-RUN sudo apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     libffi-dev \
     libssl-dev \
@@ -26,8 +26,8 @@ RUN pip install -r requirements.txt
 
 # Optionally, remove build dependencies to reduce image size
 # Uncomment the following lines if you want to remove build tools after installation
-# RUN apt-get purge -y --auto-remove gcc build-essential libffi-dev libssl-dev \
-#     && rm -rf /var/lib/apt/lists/*
+RUN apt-get purge -y --auto-remove gcc build-essential libffi-dev libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy the entire project to the working directory
 COPY . /app/
