@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Install build dependencies and ffmpeg
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN sudoapt-get update && apt-get install -y --no-install-recommends \
     gcc \
     libffi-dev \
     libssl-dev \
