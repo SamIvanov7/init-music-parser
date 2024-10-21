@@ -138,9 +138,4 @@ async def song_search(client, message):
         if os.path.exists(thumb_name):
             os.remove(thumb_name)
 
-    try:
-        # Clean up files
-        os.remove(audio_file)
-        os.remove(thumb_name)
-    except Exception as e:
-        print(e)
+
