@@ -63,24 +63,23 @@ async def song_search(client, message):
     "postprocessors": [{
         "key": "FFmpegExtractAudio",
         "preferredcodec": "mp3",
-        "preferredquality": "320",  # Set bitrate for the MP3
+        "preferredquality": "320",
     }],
     "outtmpl": "%(title)s.%(ext)s",
     "postprocessor_args": [
         "-metadata", "title=%(title)s",
-        "-metadata", "artist=InitMusicParserBot"
+        "-metadata", "artist=MusicDownloadv2bot"
     ],
     "keepvideo": False,
-    "username": username,  # Add YouTube account credentials
-    "password": password,
-    }
+    "cookiefile": "data/cookies.txt"  # Add this line to specify the cookie file
+}
 
     try:
         results = []
         count = 0
         while len(results) == 0 and count < 6:
             if count > 0:
-                time.sleep(1)
+                time.sleep(2)
             results = YoutubeSearch(query, max_results=1).to_dict()
             count += 1
         try:
@@ -110,7 +109,9 @@ async def song_search(client, message):
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=True)
+            time.sleep(2)
             audio_file = ydl.prepare_filename(info_dict).replace(info_dict['ext'], 'mp3')
+            time.sleep(2)
 
         if not audio_file:
             await m.edit('Failed to download the audio file.')
