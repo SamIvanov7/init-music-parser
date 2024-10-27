@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2e7dde37612bdfbac9b7acf9b08e61342b7e28613ca2cf8a30b58770a041fd74"
+            "sha256": "2d6174f2b351458af7f96565695b9210cd58149536783e39f761b873fcffe50b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -593,7 +593,7 @@
                 "sha256:929292d34f5872e70396626ef385ec22355a1fae8ad29e1a734c3e43f9fbc216",
                 "sha256:bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05"
             ],
-            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==1.0.0"
         },
         "h11": {
@@ -1214,7 +1214,7 @@
                 "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3",
                 "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==2.9.0.post0"
         },
         "python-didl-lite": {
@@ -1255,7 +1255,7 @@
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
                 "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==1.16.0"
         },
         "sniffio": {
@@ -1490,11 +1490,11 @@
         },
         "werkzeug": {
             "hashes": [
-                "sha256:02c9eb92b7d6c06f31a782811505d2157837cea66aaede3e217c7c27c039476c",
-                "sha256:34f2371506b250df4d4f84bfe7b0921e4762525762bbd936614909fe25cd7306"
+                "sha256:1bc0c2310d2fbb07b1dd1105eba2f7af72f322e1e455f2f93c993bee8c8a5f17",
+                "sha256:a8dd59d4de28ca70471a34cba79bed5f7ef2e036a76b3ab0835474246eb41f8d"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==3.0.4"
+            "version": "==3.0.6"
         },
         "yarl": {
             "hashes": [
@@ -1585,14 +1585,6 @@
             "markers": "python_version >= '3.9'",
             "version": "==1.15.4"
         },
-        "youtube-dl": {
-            "hashes": [
-                "sha256:bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2",
-                "sha256:f1336d5de68647e0364a47b3c0712578e59ec76f02048ff5c50ef1c69d79cd55"
-            ],
-            "index": "pip_conf_index_global",
-            "version": "==2021.12.17"
-        },
         "youtube-search": {
             "hashes": [
                 "sha256:5749a6d8076fda65557c91367f0fab0936290ecdea457c831c9f3f05918a3aa2",
@@ -1612,14 +1604,16 @@
         },
         "yt-dlp": {
             "hashes": [
-                "sha256:0baf1ab517c9748d7e337ced91c5543c36fc16246a9ebedac32ebf20c1998ceb",
-                "sha256:4694438bf79f5b3e1729652a7c06716f18e24a2f7d6fa1ed8dd1a4703131190d",
-                "sha256:7414fd7908063891e78455ab1463bc5fc7861f0562e723e0b5fb3ea5ab326e75",
-                "sha256:9e336ae663bfd7ad3ea1c02e722747388172719efc0fc39a807dace3073aa704"
+                "sha256:26f224d1c2154d21280ef0fb5bfd3be4f054f4e18b690ca8bc0befd3765fe022",
+                "sha256:47b82a1fd22411b5c95ef2f0a1ae1af4e6dfd736ea99fdb2a0ea41445abc62ba",
+                "sha256:aeac9ce5088bea588810bdd2409132125d1f0f7a3f854bae89c5742ea7509bce",
+                "sha256:ba166602ebe22a220e4dc1ead45bf00eb469ed812b22f4fb8bb54734f9b02084",
+                "sha256:ce02ce9d095cd03c24b9b725f25bff4b2818d96d96c796304e89633f53941268",
+                "sha256:f2e66058c8709f069aa45d50fb919290d9fc72079a2bdaefe5030b6d84f0c85a"
             ],
             "index": "pip_conf_index_global",
             "markers": "python_version >= '3.8'",
-            "version": "==2024.10.7"
+            "version": "==2024.10.22"
         }
     },
     "develop": {}
