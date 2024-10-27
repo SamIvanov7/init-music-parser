@@ -128,6 +128,7 @@ async def song_search(client, message):
                 # first try to extract info without downloading
                 try:
                     info_dict = ydl.extract_info(link, download=False)
+                    time.sleep(2)
                     if info_dict.get('is_live'):
                         await m.edit('❌ Cannot download live streams.')
                         return
@@ -142,6 +143,7 @@ async def song_search(client, message):
 
                 # proceed with download
                 info_dict = ydl.extract_info(link, download=True)
+                time.sleep(2)
                 audio_file = ydl.prepare_filename(info_dict).replace(info_dict['ext'], 'mp3')
 
                 if not os.path.exists(audio_file):
@@ -165,6 +167,7 @@ async def song_search(client, message):
                     secmul *= 60
 
                 # send the audio file
+                time.sleep(2)
                 await message.reply_audio(
                     audio_file,
                     caption=rep,
