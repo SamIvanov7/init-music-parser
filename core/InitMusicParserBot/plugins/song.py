@@ -101,18 +101,19 @@ async def song_search(client, message):
             "preferredquality": "320",
         }],
         "outtmpl": "%(title)s.%(ext)s",
-        "postprocessor_args": [
-            "-metadata", "title=%(title)s",
-            "-metadata", "artist=MusicDownloadv2bot"
-        ],
-        "keepvideo": False,
-        "cookiefile": "cookies.txt",
-
-        "quiet": True,
-        "no_warnings": True,
+    "quiet": True,
+    "no_warnings": True,
+    "cookiefile": "cookies.txt",
+    "extractor_retries": 3,
+    "file_access_retries": 3,
+    "fragment_retries": 3,
+    "retry_sleep_functions": {
+        "http": lambda n: 5 * (2 ** (n-1)),
+        "fragment": lambda n: 5 * (2 ** (n-1))
+    },
+    "socket_timeout": 30,
         "extract_flat": "in_playlist",
         "nocheckcertificate": True,
-        "ignoreerrors": False,
         "logtostderr": False,
         "retries": 5,
         "fragment_retries": 5,
