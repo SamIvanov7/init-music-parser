@@ -1,15 +1,49 @@
 import os
 import time
 import logging
+from datetime import datetime, timedelta
+from collections import deque
 import requests
-import yt_dlp  # type: ignore
+import yt_dlp
 from pyrogram import filters, Client, idle
-from youtube_search import YoutubeSearch  # type: ignore
+from youtube_search import YoutubeSearch
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import MessageNotModified
 
+# Environment variables
 username = os.environ.get("USERNAME")
 password = os.environ.get("PASSWORD")
+
+# Rate limiter class
+class RateLimiter:
+    def __init__(self, max_requests=2, time_window=60):
+        self.max_requests = max_requests
+        self.time_window = time_window
+        self.requests = deque()
+
+    async def can_proceed(self):
+        now = datetime.now()
+        while self.requests and self.requests[0] < now - timedelta(seconds=self.time_window):
+            self.requests.popleft()
+
+        if len(self.requests) >= self.max_requests:
+            return False
+
+        self.requests.append(now)
+        return True
+
+rate_limiter = RateLimiter()
+
+def get_cookies():
+    if not os.path.exists('cookies.txt'):
+        cookies = {
+            'name': username,
+            'value': password,
+            'domain': '.youtube.com',
+        }
+        with open('cookies.txt', 'w') as f:
+            f.write(f'youtube.com\tTRUE\t/\tTRUE\t{int(time.time()) + 31536000}\t{cookies["name"]}\t{cookies["value"]}')
+    return 'cookies.txt'
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -49,13 +83,16 @@ async def about(client, message):
                          ]
                      ))
 
-@Client.on_message(filters.text) # type: ignore
+@Client.on_message(filters.text)
 async def song_search(client, message):
+    if not await rate_limiter.can_proceed():
+        await message.reply("Please wait before making another request.")
+        return
+
     query = message.text
     print(query)
-    m = await message.reply('Searching...') # type: ignore
+    m = await message.reply('Searching...')
 
-    # enhanced yt-dlp options with better error handling and rate limiting
     ydl_opts = {
         "format": "bestaudio/best",
         "postprocessors": [{
@@ -69,15 +106,17 @@ async def song_search(client, message):
             "-metadata", "artist=MusicDownloadv2bot"
         ],
         "keepvideo": False,
-        "cookiefile": "./cookies.txt",
+        "cookiefile": get_cookies(),
+        "cookiesfrombrowser": ("firefox",),
         "http_headers": {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                "Accept-Language": "en-us,en;q=0.5",
-            },
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-us,en;q=0.5",
+            "Sec-Fetch-Mode": "navigate",
+        },
         "quiet": True,
         "no_warnings": True,
-        "extract_flat": False,
+        "extract_flat": "in_playlist",
         "nocheckcertificate": True,
         "ignoreerrors": False,
         "logtostderr": False,
@@ -87,7 +126,8 @@ async def song_search(client, message):
         "sleep_interval": 5,
         "max_sleep_interval": 10,
         "sleep_interval_requests": 1,
-        "max_sleep_interval_requests": 3
+        "max_sleep_interval_requests": 3,
+        "rate_limit": "50K"
     }
 
     try:
@@ -113,7 +153,6 @@ async def song_search(client, message):
             views = results[0]["views"]
             thumb_name = f'thumb{message.id}.jpg'
 
-            # download thumbnail
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
 
@@ -122,56 +161,56 @@ async def song_search(client, message):
             await m.edit('Failed to process track information.')
             return
 
-        # update status message
         try:
-            await m.edit("`Downloading track...`")
+            await m.edit("Downloading track...")
         except MessageNotModified:
             pass
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                # first try to extract info without downloading
-                try:
-                    info_dict = ydl.extract_info(link, download=False)
-                    time.sleep(2)
-                    if info_dict.get('is_live'):
-                        await m.edit('❌ Cannot download live streams.')
-                        return
-                except Exception as e:
-                    print(f"info extraction error: {str(e)}")
-                    if "Sign in to confirm your age" in str(e):
-                        await m.edit('❌ Age-restricted content cannot be downloaded.')
-                        return
-                    elif "Sign in to confirm you're not a bot" in str(e):
-                        # retry with additional delay
-                        time.sleep(5)
+                max_retries = 3
+                retry_count = 0
 
-                # proceed with download
-                info_dict = ydl.extract_info(link, download=True)
-                time.sleep(2)
+                while retry_count < max_retries:
+                    try:
+                        info_dict = ydl.extract_info(link, download=False)
+                        if info_dict.get('is_live'):
+                            await m.edit('❌ Cannot download live streams.')
+                            return
+
+                        time.sleep(2)
+                        info_dict = ydl.extract_info(link, download=True)
+                        break
+
+                    except yt_dlp.utils.ExtractorError as e:
+                        if "Sign in to confirm you're not a bot" in str(e):
+                            retry_count += 1
+                            if retry_count >= max_retries:
+                                await m.edit('❌ Failed due to YouTube restrictions. Please try again later.')
+                                return
+                            time.sleep(5 * retry_count)
+                        else:
+                            raise e
+
                 audio_file = ydl.prepare_filename(info_dict).replace(info_dict['ext'], 'mp3')
 
                 if not os.path.exists(audio_file):
                     await m.edit('Failed to download the audio file.')
                     return
 
-                # update status message
                 try:
-                    await m.edit("`Processing and uploading...`")
+                    await m.edit("Processing and uploading...")
                 except MessageNotModified:
                     pass
 
-                # prepare caption
-                rep = (f'🎧 Title : [{title[:35]}]({link})\n⏳ Duration : `{duration}`\n👀 Views : `{views}`\n\n'
+                rep = (f'🎧 Title : [{title[:35]}]({link})\n⏳ Duration : {duration}\n👀 Views : {views}\n\n'
                     f'📮 By: {message.from_user.mention()}')
 
-                # calculate duration in seconds
                 secmul, dur, dur_arr = 1, 0, duration.split(':')
                 for i in range(len(dur_arr) - 1, -1, -1):
                     dur += (int(dur_arr[i]) * secmul)
                     secmul *= 60
 
-                # send the audio file
                 time.sleep(2)
                 await message.reply_audio(
                     audio_file,
@@ -198,7 +237,6 @@ async def song_search(client, message):
         await m.edit("❎ An error occurred while processing your request.")
 
     finally:
-        # cleanup files
         try:
             if 'audio_file' in locals() and os.path.exists(audio_file):
                 os.remove(audio_file)
