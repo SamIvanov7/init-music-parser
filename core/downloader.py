@@ -11,7 +11,7 @@ class Downloader:
         base_dir = os.path.dirname(os.path.abspath(__file__))
         self.source_dir = os.path.join(base_dir, '../source')
         self.directory = os.path.join(self.source_dir, 'playlists')
-        self.cookies_file = os.path.join(base_dir, '../data/cookies.txt')
+        self.cookies_file = os.path.join(base_dir, '../cookies.txt')
 
         # ensure directories exist
         os.makedirs(self.directory, exist_ok=True)
