@@ -107,12 +107,7 @@ async def song_search(client, message):
         ],
         "keepvideo": False,
         "cookiefile": "cookies.txt",
-        "http_headers": {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-us,en;q=0.5",
-            "Sec-Fetch-Mode": "navigate",
-        },
+
         "quiet": True,
         "no_warnings": True,
         "extract_flat": "in_playlist",
